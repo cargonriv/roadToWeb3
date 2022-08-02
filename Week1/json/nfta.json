@@ -1,0 +1,29 @@
+{
+  "description": "This first picture is just a preview of actual work",
+  "external_url": "https://alchemy.com",
+  "image": "https://ipfs.filebase.io/ipfs/Qmdq86qZFnsZNCBTtjmRgFixV5NfXVWrigb5h7GcGrruSE/nfta.png",
+  "name": "NFT Sample #1",
+  "attributes": [
+    {
+      "trait_type": "AgeRange",
+      "value": "60-69"
+    },
+    {
+      "trait_type": "Sex",
+      "value": "Male"
+    },
+    {
+      "trait_type:": "Probability",
+      "value": "Unconfirmed"
+    },
+    {
+      "display_type": "date",
+      "trait_type": "DepartureTime",
+      "value": 1584766800
+    },
+    {
+      "trait_type": "Region",
+      "value": "Mayaguez"
+    }
+  ]
+}

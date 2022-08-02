@@ -1,0 +1,29 @@
+{
+  "description": "The banner for upcoming project release",
+  "external_url": "https://alchemy.com",
+  "image": "https://ipfs.filebase.io/ipfs/Qmdq86qZFnsZNCBTtjmRgFixV5NfXVWrigb5h7GcGrruSE/banner.png",
+  "name": "Data Life Banner",
+  "attributes": [
+    {
+      "trait_type": "AgeRange",
+      "value": "50-59"
+    },
+    {
+      "trait_type": "Sex",
+      "value": "Male"
+    },
+    {
+      "trait_type:": "Probability",
+      "value": "Unconfirmed"
+    },
+    {
+      "display_type": "date",
+      "trait_type": "DepartureTime",
+      "value": 1584421200
+    },
+    {
+      "trait_type": "Region",
+      "value": "Metropolitan"
+    }
+  ]
+}
