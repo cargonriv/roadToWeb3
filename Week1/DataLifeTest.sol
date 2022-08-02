@@ -9,11 +9,14 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract DataLifeTest is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
+    uint256 public MAX_PUBLIC_MINT;
 
     Counters.Counter private _tokenIdCounter;
     uint256 MAX_SUPPLY = 3271;
 
-    constructor() ERC721("DataLifeTest", "DLT") {}
+    constructor() ERC721("DataLifeTest", "DLT") {
+        MAX_PUBLIC_MINT = 1;
+    }
 
     function safeMint(address to, string memory uri) public onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
@@ -21,6 +24,10 @@ contract DataLifeTest is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
+    }
+
+    function setMaxPublicMint(uint256 maxPublicMint) public onlyOwner {
+        MAX_PUBLIC_MINT = maxPublicMint;
     }
 
     // The following functions are overrides required by Solidity.
