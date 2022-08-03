@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 // deployed in rinkeby testnet at contract address:
 // 0x076275c76A8AAF6F3130F26Ab5cD432411d8557A
 // front-end built with replit:
-// https://donateplatform.cargonriv.repl.co/
+// https://donationplatform.cargonriv.repl.co/
 
 // Import this file to use console.log
 import "hardhat/console.sol";
