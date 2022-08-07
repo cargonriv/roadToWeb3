@@ -37,6 +37,7 @@ const Home = () => {
 
   const fetchNFTsForCollection = async () => {
     if (collection.length) {
+      // verify pagination
       console.log(
         "this is page",
         NFTs,
