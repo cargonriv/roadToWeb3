@@ -9,6 +9,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
 
 contract DataLifeChain is ERC721URIStorage, ERC721Burnable {
+    uint256 collectedId;
     using Strings for uint256;
     using Counters for Counters.Counter;
     Counters.Counter private _collectedTokenIds;
@@ -50,7 +51,7 @@ contract DataLifeChain is ERC721URIStorage, ERC721Burnable {
             delete ownedTokenAtIndex[msg.sender][tokenIds[index]];
             _burn(ownerTokenIds[msg.sender][tokenIds[index]]);
         }
-        uint256 collectedId = _collectedTokenIds.current() + 10000;
+        collectedId = collectedId + 10001;
         _safeMint(msg.sender, collectedId);
         ownerTokenIds[msg.sender].push(collectedId);
         _setTokenURI(collectedId, getTokenURI(collectedId));
