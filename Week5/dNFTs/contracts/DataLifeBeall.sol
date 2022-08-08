@@ -16,7 +16,7 @@ contract DataLifeBeall is ERC721, ERC721Enumerable, ERC721URIStorage, VRFConsume
 
   using Counters for Counters.Counter;
   Counters.Counter private _tokenIdCounter;
-  AggregatorV3Interface public priceFeed;
+  AggregatorV3Interface public priceFeeder;
   uint public /*immutable*/ interval;
   uint public lastTimeStamp;
   int256 public currentPrice;
@@ -60,10 +60,11 @@ contract DataLifeBeall is ERC721, ERC721Enumerable, ERC721URIStorage, VRFConsume
   public 
   ERC721("DataLife", "DLF")
   VRFConsumerBase(_VRFCoordinator, _LinkToken) {
-    priceFeed = AggregatorV3Interface(_priceFeedAddress);
-    lastTimeStamp = block.timestamp;
-    interval = _updateInterval;
     setPublicChainlinkToken();
+    interval = _updateInterval;
+    lastTimeStamp = block.timestamp;
+    currentPrice = getLatestPrice();
+    priceFeeder = AggregatorV3Interface(_priceFeedAddress);
 
     dl_json_url = "https://raw.githubusercontent.com/cargonriv/DataLife/main/jsonCSV.json?token=GHSAT0AAAAAABVYOJEANSZ7NFTI5FH74KNEYXHKZNA";
     linkFee = 0.1 * 10 ** 18;
@@ -112,12 +113,12 @@ contract DataLifeBeall is ERC721, ERC721Enumerable, ERC721URIStorage, VRFConsume
     return (keccak256(abi.encodePacked(a)) == keccak256(abi.encodePacked(b)));
   }
 
-  function setPriceFeed(address newPriceFeed) public onlyOwner {
-    priceFeed = AggregatorV3Interface(newPriceFeed);
+  function setPriceFeed(address newPriceFeedAddress) public onlyOwner {
+    priceFeeder = AggregatorV3Interface(newPriceFeedAddress);
   }
 
   function getLatestPrice() public view returns (int256) {
-    (, int256 price, , ,) = priceFeed.latestRoundData();
+    (, int256 price, , ,) = priceFeeder.latestRoundData();
     return price;
   }
 
