@@ -123,7 +123,7 @@ contract DataLifeBeall is ERC721, ERC721Enumerable, ERC721URIStorage, VRFConsume
   }
 
   function checkUpkeep(bytes calldata /*checkData*/)
-  public
+  external
   view
   override
   returns (bool upkeepNeeded, bytes memory /*performData*/) {
@@ -131,10 +131,10 @@ contract DataLifeBeall is ERC721, ERC721Enumerable, ERC721URIStorage, VRFConsume
   }
 
 
+  // VERY EXPENSIVE FUNCTION BY UPDATING ALL NFTs depending on market trend
   function updateAllTokenUris(string memory trend) internal {
-    // VERY EXPENSIVE FUNCTION BY UPDATING ALL NFTs 
-    // depending on block state from new mint?
-    // CYCLICAL TREND-BASED DYNAMIC
+    // CYCLICAL TREND-BASED DYNAMIC 
+    // BASED ON NFT MINTED? INSTEAD OF:
     if (compareStrings("bear", trend)) {
         for (uint i=0; i < _tokenIdCounter.current(); i++){
             setTokenURI(i, bearUrisIpfs[i]);
