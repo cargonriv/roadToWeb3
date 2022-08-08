@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
+pragma solidity ^0.8.0;
 
-import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV2V3Interface.sol";
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 /**
  * @title MockV3Aggregator
@@ -11,16 +11,16 @@ import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV2V3Interface.sol";
  * aggregator contract, but how the aggregator got
  * its answer is unimportant
  */
-contract MockV3Aggregator is AggregatorV2V3Interface {
+contract MockV3Aggregator is AggregatorV3Interface {
     uint256 public constant override version = 0;
 
-    uint8 public override decimals;
-    int256 public override latestAnswer;
-    uint256 public override latestTimestamp;
-    uint256 public override latestRound;
+    uint8 public decimals;
+    int256 public latestAnswer;
+    uint256 public latestTimestamp;
+    uint256 public latestRound;
 
-    mapping(uint256 => int256) public override getAnswer;
-    mapping(uint256 => uint256) public override getTimestamp;
+    mapping(uint256 => int256) public getAnswer;
+    mapping(uint256 => uint256) public getTimestamp;
     mapping(uint256 => uint256) private getStartedAt;
 
     constructor(uint8 _decimals, int256 _initialAnswer) public {
