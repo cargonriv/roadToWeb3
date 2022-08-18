@@ -7,10 +7,10 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import "@chainlink/contracts/src/v0.8/KeeperCompatible.sol";
 import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol";
 import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
-import "@chainlink/contracts/src/v0.8/KeeperCompatible.sol";
-import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 contract DataLifeBeall is ERC721, ERC721Enumerable, ERC721URIStorage, VRFConsumerBase, KeeperCompatibleInterface, ChainlinkClient,  Ownable {
 
@@ -86,21 +86,24 @@ contract DataLifeBeall is ERC721, ERC721Enumerable, ERC721URIStorage, VRFConsume
     override
   {
     Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfill.selector);
+
     randomId = (randomNumber % 5) + 1;
     idString = Strings.toString(randomId);
+
     request.add("get", dl_json_url);
     request.add("path", idString);
+
     emit ReturnedCollectible(idString);
 
     return sendChainlinkRequestTo(oracle, request, linkFee);
   }
 
-  function fulfill(bytes32 _requestId, Collectible calldata _collectible) public 
+  function fulfill(bytes32 _requestId, Collectible calldata _collectible) 
+    public
+    override
     recordChainlinkFulfillment(_requestId) 
   {
-    
-    _tokenIdCounter.increment();
-    uint256 newId = _tokenIdCounter.current();
+    uint256 newId = _tokenIdCounter.length + 1;
     collectibles.push(Collectible(_collectible));
     _safeMint(requestToSender[_requestId], newId);
   }
