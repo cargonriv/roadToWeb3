@@ -1,3 +1,9 @@
 [submodule "Week6/challenge-1-decentralized-staking"]
 	path = Week6/challenge-1-decentralized-staking
 	url = https://github.com/scaffold-eth/scaffold-eth-challenges.git
+[submodule "Week7/NFT-Marketplace-Tutorial"]
+	path = Week7/NFT-Marketplace-Tutorial
+	url = https://github.com/OMGWINNING/NFT-Marketplace-Tutorial.git
+[submodule "Week7/BASE-NFT-Marketplace"]
+	path = Week7/BASE-NFT-Marketplace
+	url = https://github.com/alchemyplatform/RTW3-Week7-NFT-Marketplace.git
