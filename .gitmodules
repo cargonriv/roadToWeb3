@@ -7,3 +7,6 @@
 [submodule "Week7/BASE-NFT-Marketplace"]
 	path = Week7/BASE-NFT-Marketplace
 	url = https://github.com/alchemyplatform/RTW3-Week7-NFT-Marketplace.git
+[submodule "Week8/randomBets"]
+	path = Week8/randomBets
+	url = https://github.com/qbzzt/qbzzt.github.io.git
