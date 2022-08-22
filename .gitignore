@@ -1,0 +1,42 @@
+Week9/swap-demos/node_modules/*
+Week9/swap-demos/node_modules
+Week7/NFT-Marketplace-Tutorial/node_modules/*
+Week7/NFT-Marketplace-Tutorial/node_modules
+Week7/BASE-NFT-Marketplace/node_modules/*
+Week7/BASE-NFT-Marketplace/node_modules
+Week5/dNFTs/node_modules/*
+Week5/dNFTs/node_modules
+Week4/GalleryNFTs/nft-gallery/node_modules/*
+Week4/GalleryNFTs/nft-gallery/node_modules
+Week3/DataLifeChain/node_modules/*
+Week3/DataLifeChain/node_modules
+Week2/DonationPlatform/node_modules/*
+Week2/DonationPlatform/node_modules
+
+Week8/randomBets/LogRocket/20220615-random/.env
+Week7/BASE-NFT-Marketplace/.env
+Week3/DataLifeChain/.env
+Week2/DonationPlatform/.env
+.env
+
+#Hardhat files
+cache
+artifacts
+Week2/DonationPlatform/cache
+Week2/DonationPlatform/artifacts
+Week3/DataLifeChain/cache
+Week3/DataLifeChain/artifacts
+Week5/dNFTs/cache
+Week5/dNFTs/artifacts
+Week9/swap-demos/cache
+Week9/swap-demos/artifacts
+
+# next js files
+Week4/GalleryNFTs/nft-gallery/.next
+Week4/GalleryNFTs/nft-gallery/next-env.d.ts
+
+# firebase cache
+Week7/BASE-NFT-Marketplace/.firebase
+Week7/BASE-NFT-Marketplace/.firebase/*
+Week7/NFT-Marketplace-Tutorial/.firebase
+Week7/NFT-Marketplace-Tutorial/.firebase/*

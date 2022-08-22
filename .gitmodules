@@ -10,3 +10,6 @@
 [submodule "Week8/randomBets"]
 	path = Week8/randomBets
 	url = https://github.com/qbzzt/qbzzt.github.io.git
+[submodule "Week9/swap-demos"]
+	path = Week9/swap-demos
+	url = https://github.com/0xProject/swap-demo-tutorial.git
