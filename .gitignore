@@ -1,3 +1,5 @@
+Week10/road-to-lens/node_modules/*
+Week10/road-to-lens/node_modules
 Week9/swap-demos/node_modules/*
 Week9/swap-demos/node_modules
 Week7/NFT-Marketplace-Tutorial/node_modules/*
@@ -32,7 +34,10 @@ Week9/swap-demos/cache
 Week9/swap-demos/artifacts
 
 # next js files
+Week10/road-to-lens/.next
+Week10/road-to-lens/.next/*
 Week4/GalleryNFTs/nft-gallery/.next
+Week4/GalleryNFTs/nft-gallery/.next/*
 Week4/GalleryNFTs/nft-gallery/next-env.d.ts
 
 # firebase cache
